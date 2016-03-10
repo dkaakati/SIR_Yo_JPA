@@ -1,0 +1,18 @@
+<div ng-controller="PersonCtrl">
+
+    <label>List of persons</label>
+    <table name="repeatSelect" id= "personSelect" ng-model="SelectPers" class="table">
+        <th>Name</th>
+        <th>Age</th>
+        <th></th>
+        <tr ng-repeat="option in personlists" >
+            <td>{{option.name}}</td>
+            <td>{{option.age}}</td>
+            <td ng-click="deletePers(option.id)"><span style="color: red;" class="glyphicon glyphicon-remove"></span></td>
+        </tr>
+    </table >
+
+    <a class="btn-default" href="#/addPerson">Add a person</a>
+</div>
+
+<script src="js/person.js"></script>
