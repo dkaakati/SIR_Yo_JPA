@@ -11,7 +11,7 @@
 angular.module('sirApp')
   .controller('PersonCtrl', user).controller('PersonPost', postUser);
 
-function user($scope, $http,$location){
+function user($scope, $http,$route){
   $http({
     method: 'GET',
     url: "/rest/hello/persons/"
@@ -32,8 +32,10 @@ function user($scope, $http,$location){
     $http({
       method: 'DELETE',
       url: "/rest/hello/persons/"+id,
+
     }).then(function successCallback(response) {
-      $location.path("/person")
+      console.log("hhhh");
+      $route.reload();
     });
   }
 }
